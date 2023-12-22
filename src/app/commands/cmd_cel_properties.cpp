@@ -207,7 +207,6 @@ private:
     UserData newUserData= m_userDataView.userData();
 
     const bool opacityChanged = newOpacity != m_lastValues.opacity;
-    const bool zIndexChanged = newZIndex != m_lastValues.zIndex;
     const bool colorChanged = newUserData.color() != m_lastValues.color;
     const bool textChanged = newUserData.text() != m_lastValues.text;
 
@@ -288,6 +287,7 @@ private:
       update_screen_for_document(m_document);
     }
 
+    // TODO this is similar to LayerPropertiesWindow::onCommitChange()
     m_pendingChanges = false;
   }
 
